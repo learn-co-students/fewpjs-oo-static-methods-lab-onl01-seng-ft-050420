@@ -1,8 +1,5 @@
 class Formatter {
-  static capitalize(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
+  
   static capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -13,11 +10,11 @@ class Formatter {
 
   static titleize(sentence) {
     const sentenceArr = sentence.toLowerCase().split(' ');
-    const skipThisWords = ['the', 'a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from'];
+    const skip = ['the', 'a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from'];
     const titleizedArr = sentenceArr.map((word, index) => {
       if(index === 0) {
         return this.capitalize(word);
-      } else if(skipThisWords.some(el => el === word)) {
+      } else if(skip.some(el => el === word)) {
         return word;
       } else {
         return this.capitalize(word);
